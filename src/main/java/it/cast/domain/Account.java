@@ -1,5 +1,7 @@
 package it.cast.domain;
 
+import org.apache.ibatis.type.Alias;
+
 import java.io.Serializable;
 
 /**
@@ -7,7 +9,7 @@ import java.io.Serializable;
  */
 public class Account implements Serializable {
     private Integer id;
-    private String username;
+    private String name;
     private Double money;
 
     public Integer getId() {
@@ -18,19 +20,30 @@ public class Account implements Serializable {
         this.id = id;
     }
 
-    public String getUsername() {
-        return username;
-    }
-
-    public void setUsername(String username) {
-        this.username = username;
-    }
 
     public Double getMoney() {
         return money;
     }
 
+    @Override
+    public String toString() {
+        return "Account{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", money=" + money +
+                '}';
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
     public void setMoney(Double money) {
         this.money = money;
     }
+
 }
