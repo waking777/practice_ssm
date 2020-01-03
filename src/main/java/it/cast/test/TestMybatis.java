@@ -35,6 +35,7 @@ public class TestMybatis {
 
     }
 
+    @Test
     public void testSaveAccount() throws Exception{
         Account account = new Account();
         account.setName("zhoudongyu2");
@@ -58,6 +59,32 @@ public class TestMybatis {
         //关闭资源
         sqlSession.close();
         in.close();
+    }
+
+
+    @Test
+    public void add(){
+        int i = 1;
+//        int j = ++i + i++ + ++i + ++i + i++;
+        int j1 = ++i;
+        int j2 = i++;
+        int j3 = ++i;
+        int j4 = ++i;
+        int j5 = i++;
+        System.out.println(j1);
+        System.out.println(j2);
+        System.out.println(j3);
+        System.out.println(j4);
+        System.out.println(j5);
+
+        int a = 1;
+        boolean b = !(a++ == 3) ^ (a++ ==2) && (a++==3);
+        System.out.println(b);
+        System.out.println(a);
+
+        int c = 1;
+        c+=++c;
+        System.out.println(c);
     }
 
 }
